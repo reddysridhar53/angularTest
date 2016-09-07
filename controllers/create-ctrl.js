@@ -6,6 +6,8 @@ angular.module('ctrls.createctrl', [])
 
 	$scope.isLoggedIn = $rootScope.isLoggedIn;
 
+	$scope.email = Authenticator.getUser();
+
 	$scope.ticketTypes = [
 		{
 			'id' : 1,
