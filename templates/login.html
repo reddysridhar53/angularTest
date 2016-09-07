@@ -4,11 +4,29 @@
 		<form name="loginForm" ng-submit="logIn()">
 		  <div class="form-group">
 		    <label for="email" class="pull-left">Email</label>
-		    <input type="email" class="form-control" ng-model="email" id="email" placeholder="Your Email">
+		    <input type="email" class="form-control" ng-model="email" name="email" id="email" required
+		     ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" 
+		     placeholder="Your Email">
+		    <span ng-show="loginForm.$submitted && loginForm['email'].$error.required && loginPressed"
+          		class="red-text input-field feedback-error-msg col l12 s12"
+          	style="">
+            Please enter a valid email.
+	        </span>
+	        <span ng-show="loginForm['email'].$error.pattern && !loginPressed"
+	          class="red-text input-field feedback-error-msg col l12 s12"
+	          style="">
+	            Please enter a valid email.
+	        </span>
 		  </div>
 		  <div class="form-group">
 		    <label for="pwd pull-left" class="pull-left">Password</label>
-		    <input type="password" class="form-control" ng-model="password" id="pwd" placeholder="Password">
+		    <input type="password" class="form-control" ng-model="password" name="password" id="pwd" required 
+		    placeholder="Password">
+		    <span ng-show="loginForm.$submitted && loginForm['password'].$error.required && loginPressed"
+          	class="red-text input-field feedback-error-msg col l12 s12"
+          	style="">
+            Please enter a valid email.
+        </span>
 		  </div>
 		  <button type="submit" class="btn login-btn" ng-click="logIn()">LOGIN</button>
 		</form>

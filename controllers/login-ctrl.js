@@ -6,12 +6,14 @@ angular.module('ctrls.logictrl', [])
 
 	$rootScope.isLoggedIn = false;
 
+	$scope.loginPressed = false;
 	$scope.showError = false;
-	$scope.showSuccess = false;
 
 	var fireBase = new Firebase("https://ticket-sample.firebaseio.com");
 
 	$scope.logIn = function(){
+
+		$scope.loginPressed = true;
 
 		if($scope.loginForm.$valid){
 
@@ -22,29 +24,16 @@ angular.module('ctrls.logictrl', [])
 			}, function(error, userData) {
 
 			  	if (error) {
-					$scope.showError = true;
-			   		switch (error.code) {
 
-				    	case "EMAIL_TAKEN":
-				    		loginUser()
-				        	break;
-				      	case "INVALID_EMAIL":
-				        	$scope.errorMsg = "The specified email is not a valid email.";
-				        	break;
-				      	default:
-				        	$scope.errorMsg = "Error creating user:";
-				    }
+					$scope.loginPressed = true;
 			  	}else {
 
-				    $scope.showSuccess = true;
-				    $scope.showError = false;
 				    loginUser()
 				}
 			});
 		}else{
 
-			$scope.showError = true;
-			$scope.errorMsg = "Please enter a valid email."
+			$scope.loginPressed = false;
 			return;
 		}
 	}
