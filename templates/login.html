@@ -8,7 +8,7 @@
 		     ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" 
 		     placeholder="Your Email">
 		    <span ng-show="loginForm.$submitted && loginForm['email'].$error.required && loginPressed"
-          		class="red-text input-field feedback-error-msg col l12 s12"
+          		class="red-text input-field error-msg col l12 s12"
           	style="">
             Please enter a valid email.
 	        </span>
@@ -23,7 +23,7 @@
 		    <input type="password" class="form-control" ng-model="password" name="password" id="pwd" required 
 		    placeholder="Password">
 		    <span ng-show="loginForm.$submitted && loginForm['password'].$error.required && loginPressed"
-          	class="red-text input-field feedback-error-msg col l12 s12"
+          	class="red-text input-field error-msg col l12 s12"
           	style="">
             Please enter a valid email.
         </span>

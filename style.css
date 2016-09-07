@@ -13,6 +13,13 @@ body{
 	padding: 0;
 	height: 100%;
 }
+.error-msg{
+
+	color: red;
+    padding: 5px;
+    text-align: left;
+    display: block;
+}
 .login-content{
 
 	background: #fff;
