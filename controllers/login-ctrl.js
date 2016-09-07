@@ -54,6 +54,7 @@ angular.module('ctrls.logictrl', [])
 			if (error) {
 
 			    $scope.showError = true;
+			    $scope.showLoader = false;
 			    $scope.errorMsg = error;
 			} else {
 
