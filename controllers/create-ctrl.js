@@ -66,23 +66,30 @@ angular.module('ctrls.createctrl', [])
 	
 	var tickets = "";
 	var ticketsArr = [] 
+	$scope.showLoader = false;
 	var fireBase = new Firebase("https://ticket-sample.firebaseio.com/tickets");
 
-	fireBase.on("value", function(snapshot) {
-	  
-		tickets = snapshot.val();
-		$scope.tickets = tickets["tickets"];
-		var keys = Object.keys($scope.tickets);
+	$scope.getList = function(){
 
-		for(var i=0;i<keys.length;i++){
+		$scope.showLoader = true;
+
+		fireBase.on("value", function(snapshot) {
+		  
+			tickets = snapshot.val();
+			$scope.tickets = tickets["tickets"];
+			var keys = Object.keys($scope.tickets);
+
+			for(var i=0;i<keys.length;i++){
 
 
-			ticketsArr.push($scope.tickets[keys[i]])
-		}
-		$scope.ticketsFinal = ticketsArr;
+				ticketsArr.push($scope.tickets[keys[i]])
+			}
+			$scope.showLoader = false;
+			$scope.ticketsFinal = ticketsArr;
 
-	}, function (errorObject) {
+		}, function (errorObject) {
 
-	  	console.log("The read failed: " + errorObject.code);
-	});
+		  	console.log("The read failed: " + errorObject.code);
+		});
+	}
 })
