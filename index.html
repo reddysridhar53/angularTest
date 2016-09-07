@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>Ticketing System -  AngularJS</title>
+		
+		<script src="modules/angular.js"></script>
+		<script src="modules/angular-resource.js"></script>
+		<script src="modules/angular-route.js"></script>
+		<script src="modules/angular-sanitize.js"></script>
+
+		<!-- Firebase -->
+		<script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+		
+		<script src="https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js"></script>
+		
+		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		
+		<script src="modules/bootstrap-tpls.js"></script>
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	
+		<script type='text/javascript' src="app.js"></script>
+
+		<script type="text/javascript" src="controllers/login-ctrl.js"></script>
+		<script type="text/javascript" src="controllers/create-ctrl.js"></script>
+
+		
+		<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div class="container-fluid login-container" ng-app="angularTest">
+		<nav ng-if="isLoggedIn" class="navbar navbar-default" ng-controller="rootCtrl">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="#/">Sample Ticket</a>
+		    </div>
+
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav">
+		        <li><a href="#/tickets/create">Create Ticket</a></li>
+		        <li><a href="#/tickets/all">Tickets</a></li>
+		      </ul>
+
+		      <ul class="nav navbar-nav navbar-right">
+		        <li class="dropdown">
+		          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{useremail}} <span class="caret"></span></a>
+		          <ul class="dropdown-menu">
+		            <li><a ng-click="logout()">Logout</a></li>
+		          </ul>
+		        </li>
+		      </ul>
+		    </div>
+		  </div>
+		</nav>
+		<div class="row">
+			<div ng-view>
+				
+			</div>
+		</div>	
+	</div>	
+
+</body>
+</html>

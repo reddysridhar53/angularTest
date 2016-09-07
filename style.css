@@ -1,0 +1,96 @@
+html{
+
+	margin: 0;
+	padding: 0;
+	min-height: 100%;
+	width: 100%;
+}
+body{
+
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+}
+.login-container{
+
+	width: 100%;
+	text-align: center;
+	height: 100%;
+	background: #f1f1f1;
+}
+.login-content{
+
+	background: #fff;
+	margin:0 auto;
+	padding:1.5rem;
+	transform: translateY(60%);
+	-webkit-transform: translateY(60%);
+	-moz-transform: translateY(60%);
+	float: none !important;
+	box-shadow: 0px 2px 2px 0 #ddd;
+	-webkit-box-shadow: 0px 2px 2px 0 #ddd;
+	-moz-box-shadow: 0px 2px 2px 0 #ddd;
+}
+.create-content{
+
+	background: #fff;
+	margin:0 auto;
+	padding:1.5rem;
+	margin-top: 1%;
+	float: none !important;
+	box-shadow: 0px 2px 2px 0 #ddd;
+	-webkit-box-shadow: 0px 2px 2px 0 #ddd;
+	-moz-box-shadow: 0px 2px 2px 0 #ddd;
+}
+.login-btn:hover{
+
+	color: #fff;
+	font-weight: 600;
+	background: #009680;
+}
+.signup-btn:hover{
+
+	color: #fff;
+	font-weight: 600;
+	background: #fbd240;
+}
+.login-btn, .signup-btn{
+
+	border-radius: 4px;
+	width: 40%;
+	display: inline-block;
+	font-size: 16px;
+	font-weight: 500;
+	color: #fff;
+}
+.create-btn{
+
+	width: 60%;
+    background: #009688;
+    color: #fff;
+    border: 1px solid #009588;
+}
+.login-btn{
+
+	background: #009688;
+	border:1px solid #009688;
+}
+.signup-btn{
+
+	background: #fbd243;
+	border:1px solid #fbd243;
+}
+.login-error{
+
+	color: red;
+}
+.tickets-all .search{
+
+	width: 100%;
+	color: #666;
+}
+.tickets-all .input-group{
+
+	width: 100%;
+}

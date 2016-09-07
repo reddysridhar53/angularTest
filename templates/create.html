@@ -1,0 +1,43 @@
+<div class="row">
+	<div class="col-md-8 col-lg-6 col-sm-10 create-content">
+		<div ng-if="showError" class="login-error">Please fill in all the details</div>
+		<form name="createForm" ng-submit="create()">
+			<div class="panel panel-info">
+		  		<div class="panel-heading">Personal Details</div>
+		  		<div class="panel-body">
+		  			<div class="form-group">
+		    			<input class="form-control ng-pristine ng-invalid ng-invalid-required" ng-model="name" name="name" type="text" placeholder="Full Name" required="">
+		  			</div>
+		  			<div class="form-group">
+		    			<input class="form-control ng-pristine ng-invalid ng-invalid-required" ng-model="email" name="email" type="email" placeholder="Your Email" required="">
+		  			</div>
+		  			<div class="form-group">
+		    			<input class="form-control ng-pristine ng-invalid ng-invalid-required" ng-model="phone" ng-minlength="10" ng-maxlength="10" name="number" type="number" placeholder="Telephone" required="">
+		  			</div>
+		  		</div>
+			</div>
+		 	<div class="panel panel-info">
+		  		<div class="panel-heading">Ticket Details</div>
+		  		<div class="panel-body">
+		  			<div class="form-group">
+		    			<input class="form-control ng-pristine ng-invalid ng-invalid-required" ng-model="subject" name="subject" type="text" placeholder="Ticket Subject" required="">
+		  			</div>
+		  			<select class="form-control ng-pristine ng-invalid ng-invalid-required" name="group" ng-model="ticketType" placeholder="Ticket Group" required="">
+						<option value="">- Select Issue For -</option>
+						<option ng-repeat="ticketType in ticketTypes" data-ticketId = "{{ticketType.id}}">{{ticketType.text}}</option>
+					</select>
+		  		</div>
+			</div>
+			<div class="panel panel-info">
+		  		<div class="panel-heading">Description</div>
+		  		<div class="panel-body">
+		  			<div class="form-group">
+		    			<textarea class="form-control ng-pristine ng-invalid ng-invalid-required" ng-model="description" name="description" type="text" placeholder="Enter Description" required="">
+		  				</textarea>
+		  			</div>
+		  		</div>
+			</div>
+			<button type="submit" class="btn create-btn">CREATE TICKET</button>
+		</form>
+	</div>
+</div>
