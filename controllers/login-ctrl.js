@@ -8,12 +8,14 @@ angular.module('ctrls.logictrl', [])
 
 	$scope.loginPressed = false;
 	$scope.showError = false;
+	$scope.showLoader = false;
 
 	var fireBase = new Firebase("https://ticket-sample.firebaseio.com");
 
 	$scope.logIn = function(){
 
 		$scope.loginPressed = true;
+		$scope.showLoader = true;
 
 		if($scope.loginForm.$valid){
 
@@ -26,6 +28,7 @@ angular.module('ctrls.logictrl', [])
 			  	if (error) {
 
 					$scope.loginPressed = true;
+					$scope.showLoader = false;
 			  	}else {
 
 				    loginUser()
@@ -33,6 +36,7 @@ angular.module('ctrls.logictrl', [])
 			});
 		}else{
 
+			$scope.showLoader = false;
 			$scope.loginPressed = false;
 			return;
 		}
