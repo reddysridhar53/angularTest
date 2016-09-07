@@ -20,9 +20,7 @@
 					<th ng-click="predicate = 'description'">Description</th>
 				</thead>
 				<tbody style="position:relative;">
-					<tr ng-if="showLoader">
-						<img src="https://reddysridhar53.github.io/angularTest/images/733.gif">
-					</tr>
+					
 					<tr class="enableHover" ng-repeat="object in ticketsFinal | orderBy:predicate:true | filter:showGroup:strict" ng-click="goToTicket()">
 						<td>{{object.date | date : 'dd/MM/yyyy @ HH:mm' }}</td>
 						<td>{{ object.subject }}</td>
