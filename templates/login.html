@@ -4,7 +4,7 @@
 		<div ng-if="showLoader" class="loader-img-with-overlay">
 			<img src="https://reddysridhar53.github.io/angularTest/images/733.gif">
 		</div>
-		<form name="loginForm" ng-submit="logIn()">
+		<form id="loginForm" name="loginForm" ng-submit="logIn()">
 		  <div class="form-group">
 		    <label for="email" class="pull-left">Email</label>
 		    <input type="email" class="form-control" ng-model="email" name="email" id="email" required
@@ -16,7 +16,7 @@
             Please enter a valid email.
 	        </span>
 	        <span ng-show="loginForm['email'].$error.pattern && !loginPressed"
-	          class="red-text input-field feedback-error-msg col l12 s12"
+	          class="red-text input-field error-msg col l12 s12"
 	          style="">
 	            Please enter a valid email.
 	        </span>
